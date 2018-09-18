@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
     public int itemCount;
 
     float xInput;
-    float yInput;
+    float zInput;
 
     float horizontal;
     float vertical;
@@ -46,13 +46,15 @@ public class Player : MonoBehaviour {
     private void FixedUpdate()
     {
         xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
+        zInput = Input.GetAxisRaw("Vertical");
 
-        dir = new Vector3(xInput, 0, yInput);
+        dir = new Vector3(xInput, 0, zInput); //causing issues with gravity    
         dir = transform.TransformDirection(dir);
         dir *= speed;
 
         rb.velocity = dir;
+
+        rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
 
 
         if (Input.GetMouseButtonDown(0))//.GetButtonDown("Jump"))

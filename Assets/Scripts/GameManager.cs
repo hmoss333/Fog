@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        //should fade in from black before enabling movement in this scene
+
         //World Wrap Logic
         if (!transitioned)
         {
