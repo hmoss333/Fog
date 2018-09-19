@@ -50,20 +50,15 @@
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\SimplexNoise.cs" />
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainControl.cs" />
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainGenerator.cs" />
-     <Compile Include="Assets\Scripts\FPS_Test.cs" />
-     <Compile Include="Assets\Scripts\FadeEffect.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Headbobber.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractBarrier.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractDoor.cs" />
+     <Compile Include="Assets\Scripts\Effects\Mirror.cs" />
+     <Compile Include="Assets\Scripts\Effects\StaircaseLoop.cs" />
      <Compile Include="Assets\Scripts\Interacts\InteractObject.cs" />
      <Compile Include="Assets\Scripts\Interacts\InteractParent.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractRubble.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractVines.cs" />
-     <Compile Include="Assets\Scripts\LevelManager.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\SceneFader.cs" />
-     <Compile Include="Assets\Scripts\StaircaseLoop.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Player\Headbobber.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

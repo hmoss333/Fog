@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class InteractParent : MonoBehaviour {
 
-    [HideInInspector] public Player player;
+    [HideInInspector] public GameManager gm;
 
     // Use this for initialization
     void Start () {
-		
+        gm = GameObject.FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (player == null)
-            player = GameObject.FindObjectOfType<Player>();
+        //if (player == null)
+        //    player = GameObject.FindObjectOfType<Player>();
     }
 
     public virtual void Interact ()
