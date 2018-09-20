@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour {
     public static string levelName = "";
     float fadeTime = 0.333f; //For symbolism
 
-    
+    public List<AudioSource> audioSources = new List<AudioSource>();
 
 	// Use this for initialization
 	void Start () {
@@ -26,13 +26,31 @@ public class LevelManager : MonoBehaviour {
             Destroy(gameObject);
         DontDestroyOnLoad(this.gameObject);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    //private void OnEnable()
+    //{
+    //    audioSources.Clear();
+    //    audioSources.AddRange(GameObject.FindObjectsOfType<AudioSource>());
+    //}
+
+    // Update is called once per frame
+    void Update () {
+        //Audio Volume Controls
+        if (levelName == SceneManager.GetActiveScene().name && audioSources.Count == 0)
+        {
+            audioSources.Clear();
+            audioSources.AddRange(GameObject.FindObjectsOfType<AudioSource>());
+        }
+
         //Fade to black
         if (fading)
         {
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, fadeImage.color.a + fadeTime * Time.deltaTime);
+            foreach (AudioSource ads in audioSources)
+            {
+                if (ads && ads.volume > 0)
+                    ads.volume -= Time.deltaTime;
+            }
 
             if (fadeImage.color.a >= 1f)
             {
@@ -45,6 +63,11 @@ public class LevelManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == levelName && fadeImage.color.a > 0.0f)
         {
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, fadeImage.color.a - fadeTime * Time.deltaTime);
+            foreach (AudioSource ads in audioSources)
+            {
+                if (ads && ads.volume < 1)
+                    ads.volume += Time.deltaTime;
+            }
         }
     }
 
@@ -58,6 +81,7 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
 
+        audioSources.Clear();
         SceneManager.LoadSceneAsync(sceneName);
     }
 }

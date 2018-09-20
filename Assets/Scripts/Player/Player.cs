@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 
     public float speed;
     public float checkDist;
-    public int itemCount;
+    public AudioSource footstepSource;
 
     float xInput;
     float zInput;
@@ -30,11 +30,9 @@ public class Player : MonoBehaviour {
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        itemCount = PlayerPrefs.GetInt("itemCount");
+        gm = GameObject.FindObjectOfType<GameManager>();
 
         Cursor.lockState = CursorLockMode.Locked;
-
-        gm = GameObject.FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -45,6 +43,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     private void FixedUpdate()
     {
+        //Movement Controls//
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
 
@@ -57,6 +56,14 @@ public class Player : MonoBehaviour {
         rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
 
 
+        //Footstep Audio Controls//
+        if ((xInput != 0 || zInput != 0) && !footstepSource.isPlaying)
+            footstepSource.Play();
+        else if (xInput == 0 && zInput == 0)
+            footstepSource.Stop();
+
+
+        //Interact Controls//
         if (Input.GetMouseButtonDown(0))//.GetButtonDown("Jump"))
         {
             foundHit = new RaycastHit();
@@ -65,7 +72,7 @@ public class Player : MonoBehaviour {
 
             if (test)
             {
-                foundHit.transform.GetComponent<InteractParent>().Interact();
+                foundHit.transform.GetComponent<InteractObject>().Interact();
             }
         }
     }

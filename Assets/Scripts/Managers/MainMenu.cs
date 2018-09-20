@@ -17,15 +17,22 @@ public class MainMenu : MonoBehaviour {
         GameManager.interactedObjects.Add("Mirror", PlayerPrefs.GetInt("Mirror"));
         GameManager.interactedObjects.Add("Table", PlayerPrefs.GetInt("Table"));
         GameManager.interactedObjects.Add("Chair", PlayerPrefs.GetInt("Chair"));
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
     void Update () {
-		
-	}
+        
+    }
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        LevelManager.ChangeLevel("Staircase");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

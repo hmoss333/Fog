@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0c471b514f6b1d447ae2d2c62961ebb5
+timeCreated: 1537451498
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Violetta Script
+  fontNames:
+  - Violetta Script
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -50,15 +50,18 @@
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\SimplexNoise.cs" />
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainControl.cs" />
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainGenerator.cs" />
+     <Compile Include="Assets\Imported Packages\OldRadio\Alpinist\CamRotat.cs" />
      <Compile Include="Assets\Scripts\Effects\Mirror.cs" />
+     <Compile Include="Assets\Scripts\Effects\RotateAround.cs" />
      <Compile Include="Assets\Scripts\Effects\StaircaseLoop.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractObject.cs" />
-     <Compile Include="Assets\Scripts\Interacts\InteractParent.cs" />
+     <Compile Include="Assets\Scripts\Managers\FlyTimer.cs" />
      <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\InteractObject.cs" />
      <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Managers\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Player\Headbobber.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <None Include="Assets\Imported Packages\OldRadio\Alpinist\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

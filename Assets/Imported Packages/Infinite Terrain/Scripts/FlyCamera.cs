@@ -17,8 +17,7 @@ public class FlyCamera : MonoBehaviour {
     public bool autoFly;
 
     private float sensitivityX = 6f;
-    
-    
+
 
     // Update is called once per frame
     void Update() {
@@ -35,7 +34,7 @@ public class FlyCamera : MonoBehaviour {
         // autofly
         if (autoFly) {
             // turn off auto fly on key input.
-            if (moveVector.magnitude > 0) autoFly = false;
+            //if (moveVector.magnitude > 0) autoFly = false;
 
             moveVector = transform.forward;
         }
@@ -53,6 +52,5 @@ public class FlyCamera : MonoBehaviour {
         }
 
         transform.position = position;
-
     }
 }

@@ -27,13 +27,11 @@ public class GameManager : MonoBehaviour {
     {
         if (interacted)
         {
-            Debug.Log("interacting...");
             if (!AllObjectsInteracted(interactedObjects))
                 LevelManager.ChangeLevel("Staircase");
             else
                 LevelManager.ChangeLevel("Infinite Terrain");
 
-            Debug.Log(AllObjectsInteracted(interactedObjects));
             interacted = false;
         }
     }
