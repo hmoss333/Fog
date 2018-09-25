@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 909, y: 371}
   m_MaxSize: {x: 22004, y: 14021}
   vertical: 1
-  controlID: 50
+  controlID: 13
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 909, y: 271}
   m_MaxSize: {x: 22004, y: 10021}
   vertical: 0
-  controlID: 51
+  controlID: 14
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,7 +404,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: b8edffff94eeffff92efffff70f0ffff82f0ffffdefbffff00000000
+    m_ExpandedIDs: 2e75ffff1276ffffe676ffff0c77ffffe077ffffe877ffff587dffff3c7effff107fffff367fffff0a80ffff1280ffffcc84ffffb085ffff7c86ffffa286ffff7687ffff7e87ffff3c89ffffc0acffffcec9ffff5cd0ffff00faffffdefbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -510,25 +510,25 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    zGrid:
       m_Target: 1
       speed: 2
       m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: -0, y: 0, z: -0, w: -1}
+    m_Value: {x: -0, y: -0.70710677, z: 0, w: -0.70710677}
   m_Size:
-    m_Target: 1.1320001
+    m_Target: 38.31146
     speed: 2
-    m_Value: 1.1320001
+    m_Value: 38.31146
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_LastSceneViewRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/SceneObjects
+    - Assets/Scenes
   m_ViewMode: 0
   m_StartGridSize: 53
   m_LastFolders: []
@@ -655,7 +655,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ac9c0000
     m_LastClickedID: 40108
-    m_ExpandedIDs: 00000000d02400003a250000542500008e250000a2250000d8250000f8250000282600008c260000c6260000c8260000d82600004c270000702700008c27000090270000d42700000c2800007e280000722a0000742a0000762a0000782a0000
+    m_ExpandedIDs: 00000000d02400003a250000542500008e250000a2250000d8250000f825000028260000c8260000d8260000702700008c270000902700000c2800006a2800007e2800008c280000722a0000742a0000762a0000782a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -796,7 +796,7 @@ MonoBehaviour:
     x: 1644
     y: 100
     width: 275
-    height: 697
+    height: 693
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
