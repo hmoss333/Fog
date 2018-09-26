@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Managers\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Player\Headbobber.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <None Include="Assets\Imported Packages\Retro TV\materials\VertexColorLit.shader" />
      <None Include="Assets\Imported Packages\OldRadio\Alpinist\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity 5.6.1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
