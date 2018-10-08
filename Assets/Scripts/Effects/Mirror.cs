@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mirror : MonoBehaviour {
 
     Player player;
+    public Vector3 lookDir;
     
     // Use this for initialization
 	void OnEnable() {
@@ -15,5 +16,7 @@ public class Mirror : MonoBehaviour {
     void Update () {
         if (player)
             transform.LookAt(player.transform.position);
+
+        lookDir = transform.rotation.eulerAngles;
 	}
 }
