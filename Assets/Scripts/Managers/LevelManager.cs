@@ -27,12 +27,6 @@ public class LevelManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    //private void OnEnable()
-    //{
-    //    audioSources.Clear();
-    //    audioSources.AddRange(GameObject.FindObjectsOfType<AudioSource>());
-    //}
-
     // Update is called once per frame
     void Update () {
         //Audio Volume Controls
@@ -55,7 +49,7 @@ public class LevelManager : MonoBehaviour {
             if (fadeImage.color.a >= 1f)
             {
                 fading = false;
-                StartCoroutine(ChangeScene(levelName, 3f));
+                StartCoroutine(ChangeScene(levelName, 1f));
             }
         }
 

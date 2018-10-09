@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Managers\InteractObject.cs" />
      <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
      <Compile Include="Assets\Scripts\Managers\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Managers\Splashscreen.cs" />
      <Compile Include="Assets\Scripts\Player\Headbobber.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <None Include="Assets\Imported Packages\Retro TV\materials\VertexColorLit.shader" />
