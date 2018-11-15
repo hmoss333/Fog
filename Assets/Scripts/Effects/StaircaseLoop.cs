@@ -11,7 +11,7 @@ public class StaircaseLoop : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         loopCount = Random.Range(2, 5); //Randomize the number of loops the player must complete before moving on
-        Debug.Log(loopCount);
+        Debug.Log("Loop count: " + loopCount);
     }
 	
 	// Update is called once per frame

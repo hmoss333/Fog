@@ -51,6 +51,7 @@
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainControl.cs" />
      <Compile Include="Assets\Imported Packages\Infinite Terrain\Scripts\TerrainGenerator.cs" />
      <Compile Include="Assets\Imported Packages\OldRadio\Alpinist\CamRotat.cs" />
+     <Compile Include="Assets\Scripts\Effects\DoorwayLoop.cs" />
      <Compile Include="Assets\Scripts\Effects\Mirror.cs" />
      <Compile Include="Assets\Scripts\Effects\RotateAround.cs" />
      <Compile Include="Assets\Scripts\Effects\StaircaseLoop.cs" />
