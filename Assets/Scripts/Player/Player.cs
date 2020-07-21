@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
 
     GameManager gm;
 
+
     // Use this for initialization
     void Start()
     {
@@ -83,7 +84,7 @@ public class Player : MonoBehaviour {
         vertical -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         vertical = Mathf.Clamp(vertical, -30, 30);
 
-        transform.Rotate(0, horizontal, 0);
         Camera.main.transform.localRotation = Quaternion.Euler(vertical, 0, 0);
+        transform.Rotate(0, horizontal, 0);
     }
 }

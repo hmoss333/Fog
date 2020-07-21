@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class InteractObject : MonoBehaviour {
 
-    public GameObject fireEffect;
+    private static Renderer[] childMaTS;
+    public Shader staticShader;
     bool hasInteracted;
     float waitTime = 1.5f;
 
@@ -12,10 +13,12 @@ public class InteractObject : MonoBehaviour {
 
     private void Start()
     {
+        childMaTS = GetComponentsInChildren<Renderer>();
+
         if (PlayerPrefs.GetInt(this.gameObject.name.Substring(0, this.gameObject.name.LastIndexOf("(Clone)"))) == 1)
         {
             hasInteracted = true;
-            fireEffect = Instantiate(fireEffect, this.gameObject.transform);
+            SetStaticShader();
         }
         else
             hasInteracted = false;
@@ -25,11 +28,19 @@ public class InteractObject : MonoBehaviour {
     {
         if (!hasInteracted)
         {
-            fireEffect = Instantiate(fireEffect, this.gameObject.transform);
+            SetStaticShader();
             interactSource.Play();
             hasInteracted = true;
 
             StartCoroutine(WaitForInput(waitTime));
+        }
+    }
+
+    private void SetStaticShader ()
+    {
+        for (int i = 0; i < childMaTS.Length; i++)
+        {
+            childMaTS[i].material.shader = staticShader;
         }
     }
 
