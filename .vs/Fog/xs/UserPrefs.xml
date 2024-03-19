@@ -1,14 +1,29 @@
 ﻿<Properties StartupConfiguration="{7A29358A-731A-7F02-E5E8-8B8B340D649C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Editor/PostBuildActions.cs">
-    <Files>
-      <File FileName="Assets/Scripts/Managers/PostBuildActions.cs" Line="17" Column="39" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c8e1fc6a-f9fb-4a04-ade6-02c6bdb9f331" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1d78fa34-709e-408e-8f23-da72c6b95830" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player/Headbobber.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player/Headbobber.cs" Line="35" Column="63" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Fog" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
