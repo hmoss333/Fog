@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     public GameObject[] sceneObjects;
+    public GameObject finalObject;
     public GameObject currentSceneObject;
     public static Dictionary<string, int> interactedObjects = new Dictionary<string, int>();
 
@@ -20,21 +21,7 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
 	void Start () {
         interacted = false;
-        //CreateNewSceneObject();
     }
-
-    //private void Update()
-    //{
-    //    if (interacted)
-    //    {
-    //        if (!AllObjectsInteracted(interactedObjects))
-    //            LevelManager.ChangeLevel("Staircase");
-    //        else
-    //            LevelManager.ChangeLevel("Infinite Terrain");
-
-    //        interacted = false;
-    //    }
-    //}
 
     // Update is called once per frame
     void FixedUpdate () {
@@ -43,17 +30,28 @@ public class GameManager : MonoBehaviour {
         //World Wrap Logic
         if (!transitioned)
         {
-            if (player.transform.position.x > worldWrapOffset || player.transform.position.x < -worldWrapOffset)
+            if (finalObject != null && AllObjectsInteracted(interactedObjects))
             {
-                player.transform.position = new Vector3(-player.transform.position.x, player.transform.position.y, player.transform.position.z);
-                CreateNewSceneObject();
+                Destroy(currentSceneObject);
+                currentSceneObject = finalObject;
+                currentSceneObject = Instantiate(currentSceneObject);
+
                 transitioned = true;
             }
-            if (player.transform.position.z > worldWrapOffset || player.transform.position.z < -worldWrapOffset)
+            else
             {
-                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -player.transform.position.z);
-                CreateNewSceneObject();
-                transitioned = true;
+                if (player.transform.position.x > worldWrapOffset || player.transform.position.x < -worldWrapOffset)
+                {
+                    player.transform.position = new Vector3(-player.transform.position.x, player.transform.position.y, player.transform.position.z);
+                    CreateNewSceneObject();
+                    transitioned = true;
+                }
+                if (player.transform.position.z > worldWrapOffset || player.transform.position.z < -worldWrapOffset)
+                {
+                    player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -player.transform.position.z);
+                    CreateNewSceneObject();
+                    transitioned = true;
+                }
             }
         }
         else
