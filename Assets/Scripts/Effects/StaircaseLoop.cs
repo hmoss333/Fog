@@ -27,7 +27,7 @@ public class StaircaseLoop : MonoBehaviour {
 
             loopCount--;
             if (loopCount <= 0)
-                LevelManager.ChangeLevel("InfinityRoom");
+                LevelManager.ChangeLevel("Doorways");
         }
     }
 }

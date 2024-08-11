@@ -6,6 +6,7 @@ public class InteractObject : MonoBehaviour {
 
     private static Renderer[] childMaTS;
     public Shader staticShader;
+    public string levelToLoad;
     bool hasInteracted;
     float waitTime = 1.5f;
 
@@ -15,13 +16,17 @@ public class InteractObject : MonoBehaviour {
     {
         childMaTS = GetComponentsInChildren<Renderer>();
 
-        if (PlayerPrefs.GetInt(this.gameObject.name.Substring(0, this.gameObject.name.LastIndexOf("(Clone)"))) == 1)
+        try
         {
-            hasInteracted = true;
-            SetStaticShader();
+            if (PlayerPrefs.GetInt(this.gameObject.name.Substring(0, this.gameObject.name.LastIndexOf("(Clone)"))) == 1)
+            {
+                hasInteracted = true;
+                SetStaticShader();
+            }
+            else
+                hasInteracted = false;
         }
-        else
-            hasInteracted = false;
+        catch { hasInteracted = false; }
     }
 
     public void Interact()
@@ -46,11 +51,16 @@ public class InteractObject : MonoBehaviour {
 
     IEnumerator WaitForInput(float waitTime)
     {
-        string tempName = this.gameObject.name.Substring(0, this.gameObject.name.LastIndexOf("(Clone)"));
-        PlayerPrefs.SetInt(tempName, 1);
+        try
+        {
+            string tempName = this.gameObject.name.Substring(0, this.gameObject.name.LastIndexOf("(Clone)"));
+            PlayerPrefs.SetInt(tempName, 1);
+            GameManager.UpdateObjects(tempName, PlayerPrefs.GetInt(tempName));
+        }
+        catch { }
 
         yield return new WaitForSeconds(waitTime);
-        GameManager.UpdateObjects(tempName, PlayerPrefs.GetInt(tempName));
-        GameManager.interacted = true;
+        //GameManager.interacted = true;
+        LevelManager.ChangeLevel(levelToLoad);
     }
 }

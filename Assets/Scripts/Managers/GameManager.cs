@@ -23,18 +23,18 @@ public class GameManager : MonoBehaviour {
         //CreateNewSceneObject();
     }
 
-    private void Update()
-    {
-        if (interacted)
-        {
-            if (!AllObjectsInteracted(interactedObjects))
-                LevelManager.ChangeLevel("Staircase");
-            else
-                LevelManager.ChangeLevel("Infinite Terrain");
+    //private void Update()
+    //{
+    //    if (interacted)
+    //    {
+    //        if (!AllObjectsInteracted(interactedObjects))
+    //            LevelManager.ChangeLevel("Staircase");
+    //        else
+    //            LevelManager.ChangeLevel("Infinite Terrain");
 
-            interacted = false;
-        }
-    }
+    //        interacted = false;
+    //    }
+    //}
 
     // Update is called once per frame
     void FixedUpdate () {

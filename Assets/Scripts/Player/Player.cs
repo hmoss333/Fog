@@ -39,6 +39,21 @@ public class Player : MonoBehaviour {
     private void Update()
     {
         UpdateRotation();
+
+        //Interact Controls//
+        if (Input.GetMouseButtonDown(0))//.GetButtonDown("Jump"))
+        {
+            Debug.Log("Raycast out");
+            foundHit = new RaycastHit();
+            bool test = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out foundHit, checkDist, 1 << LayerMask.NameToLayer("Event"));
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.green);
+
+            if (test)
+            {
+                Debug.Log($"Hit {foundHit.transform.gameObject.name}");
+                foundHit.transform.GetComponent<InteractObject>().Interact();
+            }
+        }
     }
 
     // Update is called once per frame
@@ -64,18 +79,20 @@ public class Player : MonoBehaviour {
             footstepSource.Stop();
 
 
-        //Interact Controls//
-        if (Input.GetMouseButtonDown(0))//.GetButtonDown("Jump"))
-        {
-            foundHit = new RaycastHit();
-            bool test = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out foundHit, checkDist, 1 << LayerMask.NameToLayer("Event"));
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.green);
+        ////Interact Controls//
+        //if (Input.GetMouseButtonDown(0))//.GetButtonDown("Jump"))
+        //{
+        //    Debug.Log("Raycast out");
+        //    foundHit = new RaycastHit();
+        //    bool test = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out foundHit, checkDist, 1 << LayerMask.NameToLayer("Event"));
+        //    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.green);
 
-            if (test)
-            {
-                foundHit.transform.GetComponent<InteractObject>().Interact();
-            }
-        }
+        //    if (test)
+        //    {
+        //        Debug.Log($"Hit {foundHit.transform.gameObject.name}");
+        //        foundHit.transform.GetComponent<InteractObject>().Interact();
+        //    }
+        //}
     }
 
     void UpdateRotation()
