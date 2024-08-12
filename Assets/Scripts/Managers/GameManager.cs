@@ -9,18 +9,17 @@ public class GameManager : MonoBehaviour {
     public GameObject finalObject;
     public GameObject currentSceneObject;
     public static Dictionary<string, int> interactedObjects = new Dictionary<string, int>();
+    public static bool final;
 
     public Player player;
     public float worldWrapOffset; //must be a higher value than the Fog offset (lighting settings)
     bool transitioned = false;
     float xOff;
     float zOff;
-
-    public static bool interacted;
     
     // Use this for initialization
 	void Start () {
-        interacted = false;
+        final = AllObjectsInteracted() ? true : false;
     }
 
     // Update is called once per frame
@@ -30,28 +29,17 @@ public class GameManager : MonoBehaviour {
         //World Wrap Logic
         if (!transitioned)
         {
-            if (finalObject != null && AllObjectsInteracted(interactedObjects))
+            if (player.transform.position.x > worldWrapOffset || player.transform.position.x < -worldWrapOffset)
             {
-                Destroy(currentSceneObject);
-                currentSceneObject = finalObject;
-                currentSceneObject = Instantiate(currentSceneObject);
-
+                player.transform.position = new Vector3(-player.transform.position.x, player.transform.position.y, player.transform.position.z);
+                CreateNewSceneObject();
                 transitioned = true;
             }
-            else
+            if (player.transform.position.z > worldWrapOffset || player.transform.position.z < -worldWrapOffset)
             {
-                if (player.transform.position.x > worldWrapOffset || player.transform.position.x < -worldWrapOffset)
-                {
-                    player.transform.position = new Vector3(-player.transform.position.x, player.transform.position.y, player.transform.position.z);
-                    CreateNewSceneObject();
-                    transitioned = true;
-                }
-                if (player.transform.position.z > worldWrapOffset || player.transform.position.z < -worldWrapOffset)
-                {
-                    player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -player.transform.position.z);
-                    CreateNewSceneObject();
-                    transitioned = true;
-                }
+                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -player.transform.position.z);
+                CreateNewSceneObject();
+                transitioned = true;
             }
         }
         else
@@ -67,7 +55,7 @@ public class GameManager : MonoBehaviour {
     void CreateNewSceneObject()
     {
         Destroy(currentSceneObject);
-        currentSceneObject = NewCurrentSceneObject(sceneObjects);
+        currentSceneObject = final ? finalObject : NewCurrentSceneObject(sceneObjects);
         currentSceneObject = Instantiate(currentSceneObject);
     }
     GameObject NewCurrentSceneObject(GameObject[] listOfObjects)
@@ -91,11 +79,11 @@ public class GameManager : MonoBehaviour {
             Debug.Log("Replaced key");
         }
     }
-    bool AllObjectsInteracted(Dictionary<string, int> objectsToCheck)
+    public static bool AllObjectsInteracted()
     {
-        for (int i = 0; i < objectsToCheck.Count; i++)
+        for (int i = 0; i < interactedObjects.Count; i++)
         {
-            if (objectsToCheck.ContainsValue(0))
+            if (interactedObjects.ContainsValue(0))
                 return false;
         }
 
