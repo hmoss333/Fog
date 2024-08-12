@@ -16,7 +16,7 @@ public class FlyCamera : MonoBehaviour {
 
     public bool autoFly;
 
-    private float sensitivityX = 6f;
+    public float sensitivityX = 6f;
 
 
     // Update is called once per frame

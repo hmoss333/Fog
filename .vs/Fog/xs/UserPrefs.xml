@@ -1,19 +1,14 @@
 ﻿<Properties StartupConfiguration="{7A29358A-731A-7F02-E5E8-8B8B340D649C}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5441bdd1-c0df-4d27-b15b-44a2a059e339" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Imported Packages/Infinite Terrain/Scripts/FlyCamera.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player/Headbobber.cs" Line="35" Column="63" />
+      <File FileName="Assets/Scripts/Player/Headbobber.cs" Line="12" Column="15" />
       <File FileName="Assets/Scripts/Managers/InteractObject.cs" Line="21" Column="63" />
       <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="29" Column="27" />
       <File FileName="Assets/Scripts/Player/Player.cs" Line="66" Column="80" />
       <File FileName="Assets/Scripts/Managers/LevelManager.cs" Line="75" Column="6" />
       <File FileName="Assets/Scripts/Effects/StaircaseLoop.cs" Line="25" Column="10" />
       <File FileName="Assets/Scripts/Managers/MainMenu.cs" Line="13" Column="37" />
+      <File FileName="Assets/Imported Packages/Infinite Terrain/Scripts/FlyCamera.cs" Line="19" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,5 +26,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="09cc9916-b7c4-4333-82a4-57fd2b3f13e4" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -9,7 +9,7 @@ public class Headbobber : MonoBehaviour {
     public float bobbingAmount = 0.05f; //0.1025f;
     float midpoint = 0.5f;
 
-    void Update()
+    void FixedUpdate()
     {
         float waveslice = 0.0f;
         float horizontal = Input.GetAxis("Horizontal");
